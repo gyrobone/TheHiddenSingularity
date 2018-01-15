@@ -1,6 +1,6 @@
 import items
 import enemies
-import actions
+from ths import actions
 import world
 
 

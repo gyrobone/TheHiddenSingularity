@@ -1,8 +1,8 @@
 import world
-from player import Player
+from ths.player import Player
 from pygame import mixer
 mixer.init()
-mixer.music.load('ths_music.mp3')
+mixer.music.load('ths\\resources\\ths_music.mp3')
 mixer.music.play()
 mixer.music.set_volume(.5)
 
