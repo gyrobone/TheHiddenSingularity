@@ -1,0 +1,4 @@
+	FirstEncounter	LeaveShip
+	EmptyShipHall	
+EmptyRoom	StartingRoom	FindBandageRoom
+	FindDaggerRoom	

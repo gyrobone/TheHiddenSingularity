@@ -1,0 +1,4 @@
+2. Add more rooms.
+3. Add buy/sell system.
+4. Add crafting system.
+5. Change print inventory to open/close inventory
