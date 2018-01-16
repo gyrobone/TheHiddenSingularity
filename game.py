@@ -1,8 +1,10 @@
 import world
-from ths.player import Player
+from player import Player
 from pygame import mixer
+import os
+dirpath = os.path.dirname(os.path.realpath(__file__))
 mixer.init()
-mixer.music.load('ths\\resources\\ths_music.mp3')
+mixer.music.load(dirpath + '/resources/ths_music.mp3')
 mixer.music.play()
 mixer.music.set_volume(.5)
 

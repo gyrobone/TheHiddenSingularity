@@ -1,7 +1,7 @@
-import items
-import enemies
-from ths import actions
 import world
+import enemies
+import actions
+import items
 
 
 # Base Room Types

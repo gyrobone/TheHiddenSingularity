@@ -1,4 +1,4 @@
-from ths.player import Player
+from player import Player
 
 
 class Action:

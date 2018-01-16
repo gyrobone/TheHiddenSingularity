@@ -1,9 +1,12 @@
+import os
+dirpath = os.path.dirname(os.path.realpath(__file__))
+
 _world = {}
 starting_position = (0, 0)
 
 
 def load_tiles():
-    with open('ths\\resources\\map.txt', 'r') as f:
+    with open(dirpath + '/resources/map.txt', 'r') as f:
         rows = f.readlines()
     x_max = len(rows[0].split('\t'))
     for y in range(len(rows)):

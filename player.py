@@ -1,6 +1,7 @@
-import items
 import world
+import items
 import random
+import os
 
 
 class Player:
@@ -15,9 +16,11 @@ class Player:
         return self.hp > 0
 
     def print_status(self):
+        os.system('cls')
         print("HP: " + str(self.hp))
 
     def print_inventory(self):
+        os.system('cls')
         print("Credits: " + str(self.credits))
         for item in self.inventory:
             print("{}\n======\n{}\nValue: {} Credits".format(item.name, item.description, item.value))
@@ -34,18 +37,23 @@ class Player:
         print(world.tile_exists(self.location_x, self.location_y).intro_text())
 
     def move_north(self):
+        os.system('cls')
         self.move(dx=0, dy=-1)
 
     def move_south(self):
+        os.system('cls')
         self.move(dx=0, dy=1)
 
     def move_east(self):
+        os.system('cls')
         self.move(dx=1, dy=0)
 
     def move_west(self):
+        os.system('cls')
         self.move(dx=-1, dy=0)
 
     def attack(self, enemy):
+        os.system('cls')
         best_weapon = None
         max_dmg = 0
         for i in self.inventory:
@@ -65,6 +73,7 @@ class Player:
                 print("{} HP is {}".format(enemy.name, enemy.hp))
 
     def heal(self):
+        os.system('cls')
         best_healitem = None
         heal_amount = 0
         for i in self.inventory:
@@ -81,6 +90,7 @@ class Player:
             print("HP: " + str(self.hp))
 
     def look_around(self):
+        os.system('cls')
         currenttile = world.tile_exists(self.location_x, self.location_y)
         if currenttile.hasloot is True:
             currenttile.lootprompt()
@@ -93,6 +103,7 @@ class Player:
             action_method(**kwargs)
 
     def flee(self, tile):
+        os.system('cls')
         available_moves = tile.adjacent_moves()
         r = random.randint(0, len(available_moves) - 1)
         self.do_action(available_moves[r])
