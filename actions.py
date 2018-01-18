@@ -60,3 +60,8 @@ class Flee(Action):
 class Status(Action):
     def __init__(self):
         super().__init__(method=Player.print_status, name="Check Health Status", hotkey='q')
+
+
+class CraftMenu(Action):
+    def __init__(self):
+        super().__init__(method=Player.craftmenu, name="Open Crafting Menu", hotkey="c")

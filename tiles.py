@@ -37,6 +37,7 @@ class MapTile:
         moves.append(actions.Heal())
         moves.append(actions.LookAround())
         moves.append(actions.Status())
+        moves.append(actions.CraftMenu())
         return moves
 
 
@@ -114,7 +115,13 @@ class EmptyRoom(MapTile):
         """
 
     def modify_player(self, player):
-        pass
+        if world.tile_exists(player.location_x, player.location_y).visited is False:
+            if items.Rubble in player.inventory.keys():
+                player.inventory[items.Rubble] += 1
+            else:
+                player.inventory.update({items.Rubble: 1})
+        else:
+            pass
 
     def lootprompt(self):
         pass
@@ -153,7 +160,10 @@ class FindDaggerRoom(MapTile):
 
     def modify_player(self, player):
         if world.tile_exists(player.location_x, player.location_y).visited is False:
-            player.inventory.append(items.Dagger)
+            if items.Dagger in player.inventory.keys():
+                player.inventory[items.Dagger] += 1
+            else:
+                player.inventory.update({items.Dagger: 1})
         else:
             pass
 
@@ -164,7 +174,10 @@ class FindBandageRoom(MapTile):
 
     def modify_player(self, player):
         if world.tile_exists(player.location_x, player.location_y).visited is False:
-            player.inventory.append(items.Bandage)
+            if items.Bandage in player.inventory.keys():
+                player.inventory[items.Bandage] += 1
+            else:
+                player.inventory.update({items.Bandage: 1})
             player.credits += 10
         else:
             pass

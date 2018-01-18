@@ -36,6 +36,14 @@ class Rubble(CraftingItem):
     tier = 0
 
 
+class MakeShiftKnife(Weapon):
+    itemtype = "Weapon"
+    name = "Make-Shift Knife"
+    description = "Small, flimsy knife made from rubble found on the ship."
+    value = 0
+    damage = 2
+
+
 # Healing Items
 class Gauze(HealingItem):
     itemtype = "Healing Item"
